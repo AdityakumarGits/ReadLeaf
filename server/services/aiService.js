@@ -98,9 +98,9 @@ export const draftReply = async (ticket) => {
     return { draft: fallback, source: "fallback" };
   try {
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({
-      model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
-    });
+  const model = genAI.getGenerativeModel({
+  model: process.env.GEMINI_MODEL || "gemini-3.8-flash",
+});
     const result = await model.generateContent(
       `You are a BookLeaf Publishing support representative. Write a concise, empathetic, professional response to an author. ` +
         `Acknowledge the concern first, state only policy facts supported by the knowledge base, do not invent the author's account status, ` +
